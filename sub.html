@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico"> 
+    <title>이미영 웹디자인 포트폴리오</title>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css">
+    <link rel="stylesheet" href="css/common.css">
+    <script src="js/script.js"></script>
+
+<style>
+
+    * {margin:0; padding:0; box-sizing:border-box;}
+        ul,li,ol {list-style:none; margin:0; padding:0;}
+        a {text-decoration:none;}
+
+
+    .typing-txt {width:100%; height:80px; display:flex; justify-content:center; align-items:center; }
+    .typing-txt h1 {font-family:'Barlow', sans-serif; font-weight: 600 !important; margin-top:15px;
+              letter-spacing:3px; color:#000; font-size:28px; text-transform: uppercase; position: absolute;
+              display: inline-block; animation-name:cursor; animation-duration: 0.3s; animation-iteration-count: infinite; border-right: 1px solid #ccc;}
+    .typing-txt h1:first-of-type {display: none;}     
+    
+    .go_box  { width:150px; height:20px; position:absolute; right:6%; margin-top:-10px;
+           display:flex; justify-content:center; align-items:center; }
+    .go_box h3 {font-family:'Barlow', sans-serif; font-weight: 600 !important; color:red; font-size:16px; display:inline; margin-top:-2px; margin-left:-15px;  }
+    .fa-solid {color:red; font-size:14px; position:absolute; right:7%; margin-top:-6px;}
+    .fa-solid:hover {color:#000; transition: 0.5s; cursor:pointer;}
+    /* .typing-txt img {width:22px; height:22px; position:absolute; right:7.5%; margin-top:30px;} */
+    
+    @keyframes cursor {
+    0% {
+        border-right: 1px solid #fff;
+    }
+    50% {
+        border-right: 1px solid #000;
+    }
+    100% {
+        border-right: 1px solid #fff;
+    }
+    }
+
+    #img_top_box {width:100%; height:690px; }
+    .img_big_box {width:87%; height:680px;  margin:15px auto; 
+        z-index:1;border:1px solid #eee; display: flex; flex-direction:row; }
+    .text_box {width:23%; height:200px; display: flex; flex-direction: column; align-items:center; float:left; margin-top:260px; margin-left:280px;}  
+
+    .img_big_box:first-of-type h1 {font-family:'Barlow', sans-serif; font-weight: 500; color:#b71b22; font-size:37px; text-align:center; margin-top:40px;} 
+    .img_big_box:nth-of-type(2) h1 {font-family:'Barlow', sans-serif; font-weight: 500; color:#bbc3ef; font-size:37px; text-align:center; margin-top:40px;} 
+    .img_big_box:nth-of-type(3) h1 {font-family:'Barlow', sans-serif; font-weight: 500; color:#84ae9a; font-size:37px; text-align:center; margin-top:40px;} 
+    .img_big_box:nth-of-type(4) h1 {font-family:'Barlow', sans-serif; font-weight: 500; color:#83a2b2; font-size:37px; text-align:center; margin-top:40px;} 
+    .img_big_box:nth-of-type(5) h1 {font-family:'Barlow', sans-serif; font-weight: 500; color:#ce93ee; font-size:37px; text-align:center; margin-top:40px;} 
+    .img_big_box:nth-of-type(6) h1 {font-family:'Barlow', sans-serif; font-weight: 500; color:#d1d971; font-size:37px; text-align:center; margin-top:40px;} 
+    
+    .text_box h2 {font-family:'S-CoreDream-3Light';  color:#525252; font-size:21px; text-align:center; margin-top:13px; } 
+    .text_box p {font-family:'S-CoreDream-3Light'; color:#aeadad; font-size:15px; text-align:center; margin-top:3px; letter-spacing: 1px; } 
+    .img_content {width:60%; height:100%; z-index:1; display:flex; justify-content:center; align-items:center; float:right; }
+    .img_content img:first-of-type {width:800px; height:100%;}
+
+    .pn_center {width:100%; height:100px; display:flex; justify-content:center; align-items: center; position:absolute; margin-top:-380px}
+    .p_button {width:67px; height:65px; background-color:#fff; border:1px solid #d4d4d4; position:absolute; left:2%;
+        display:flex; justify-content:center; align-items: center;  margin-top:-30px;}
+    .n_button {width:67px; height:65px; background-color:#fff; border:1px solid #d4d4d4; position:absolute; right:2%; 
+        display:flex; justify-content:center; align-items: center;  margin-top:-30px;}
+    .p_button:hover, .n_button:hover {cursor:pointer; color:#fff; transition: 0.7s; background-color:#cfcfcf;}
+    .p_button,.n_button {font-family: 'S-CoreDream-5Medium'; letter-spacing: 2px; font-size: 11px; color:#999; text-transform: uppercase;}
+
+    .number_box {width:100%; height:45px; display:flex; justify-content:center; align-items:center; margin-bottom:10px; }
+    .number_button {font-family: 'S-CoreDream-5Medium'; letter-spacing: 1px; font-size:15px; color:#999; margin:13px;}
+    .number_button:hover, .active {cursor:pointer; color:#000; transition: 0.7s;}
+
+    .footer {width:100%; height:97px; display:flex; justify-content:center; align-items:center;}
+    .footer_box {width:100%; height:97px; background-color:#c2c2c2;}
+    .footer_box p:first-of-type {font-family:'S-CoreDream-3Light'; color:#fff; font-size:13px; 
+            text-align:center; margin-top:32px; }
+    .footer_box p:nth-of-type(2) {font-family:'S-CoreDream-3Light'; letter-spacing:1px; color:#fff; font-size:8px; 
+            text-align:center; margin-top:5px;}
+
+</style>
+
+</head>
+
+<body>
+
+   <div class="typing-txt">
+      <h1>MiYoung Web Design Portfolio</h1>
+      <h1 class="typing"></h1>
+   </div>
+
+   <div class="go_box">
+      <h3>Event Page GO</h3>
+      <a href="index.html"><i class="fa-solid fa-circle-chevron-right"></a></i>
+   </div>
+    
+   <div id="img_top_box">
+
+        <div class="img_big_box"> 
+            <div class="text_box">
+                <h1>Contents</h1>
+                <h2>레드앰플 [제품 홍보 컨텐츠]</h2>
+                <p>각 채널에 업로드 될 컨텐츠<br>페이스북/인스타그램/카카오톡 채널/네이버 밴드</p>
+            </div>
+            <div class="img_content">
+                <img class="mySlides" src="img/sub_img1.jpg" style="background-color:white;">
+            </div>
+        </div>
+
+
+        <div class="img_big_box"> 
+            <div class="text_box">
+                <h1>Contents</h1>
+                <h2>슈퍼셀세럼 [제품 홍보 컨텐츠]</h2>
+                <p>각 채널에 업로드 될 컨텐츠<br>페이스북/인스타그램/카카오톡 채널/네이버 밴드</p>
+            </div>
+            <div class="img_content">
+                <img class="mySlides" src="img/sub_img2.jpg" style="background-color:white;">
+            </div>
+        </div>
+
+
+        <div class="img_big_box"> 
+            <div class="text_box">
+                <h1>Contents</h1>
+                <h2>슈퍼셀세럼 [제품 홍보 컨텐츠]</h2>
+                <p>각 채널에 업로드 될 컨텐츠<br>페이스북/인스타그램/카카오톡 채널/네이버 밴드</p>
+            </div>
+            <div class="img_content">
+                <img class="mySlides" src="img/sub_img3.jpg" style="background-color:white;">
+            </div>
+        </div>
+
+
+        <div class="img_big_box"> 
+            <div class="text_box">
+                <h1>Contents</h1>
+                <h2>슈퍼셀세럼 [제품 홍보 컨텐츠]</h2>
+                <p>각 채널에 업로드 될 컨텐츠<br>페이스북/인스타그램/카카오톡 채널/네이버 밴드</p>
+            </div>
+            <div class="img_content">
+                <img class="mySlides" src="img/sub_img4.jpg" style="background-color:white;">
+            </div>
+        </div>
+
+
+        <div class="img_big_box"> 
+            <div class="text_box">
+                <h1>Contents</h1>
+                <h2>시크릿로즈문 [제품 홍보 컨텐츠]</h2>
+                <p>각 채널에 업로드 될 컨텐츠<br>페이스북/인스타그램/카카오톡 채널/네이버 밴드</p>
+            </div>
+            <div class="img_content">
+                <img class="mySlides" src="img/sub_img5.jpg" style="background-color:white;">
+            </div>
+        </div>
+
+
+        <div class="img_big_box"> 
+            <div class="text_box">
+                <h1>Contents</h1>
+                <h2>언더시크릿 [제품 홍보 컨텐츠]</h2>
+                <p>각 채널에 업로드 될 컨텐츠<br>페이스북/인스타그램/카카오톡 채널/네이버 밴드</p>
+            </div>
+            <div class="img_content">
+                <img class="mySlides" src="img/sub_img6.jpg" style="background-color:white;">
+            </div>
+        </div>
+
+    </div>
+
+    <div class="pn_center">
+      <div class="c">
+         <div class="p_button" onclick="plusDivs(-1)">❮ Prev</div>
+         <div class="n_button" onclick="plusDivs(1)">Next ❯</div>
+      </div>
+    </div>
+
+    <div class="number_box">
+        <div class="number_button" onclick="currentDiv(1)">1</div> 
+        <div class="number_button" onclick="currentDiv(2)">2</div> 
+        <div class="number_button" onclick="currentDiv(3)">3</div> 
+        <div class="number_button" onclick="currentDiv(4)">4</div> 
+        <div class="number_button" onclick="currentDiv(5)">5</div> 
+        <div class="number_button" onclick="currentDiv(6)">6</div> 
+    </div>
+
+    <div class="footer">
+        <div class="footer_box">
+            <p>본 홈페이지는 상업적 목적이 아닌 개인 포트폴리오 용으로 제작되었습니다.</p>
+            <p>©COPYRIGHT 2022 MiYOUNG LEE.</p>
+        </div>
+    </div>
+    
+<script>
+    
+    var slideIndex = 1;
+    showDivs(slideIndex);
+
+    function plusDivs(n) {
+    showDivs(slideIndex += n);
+    }
+
+    function currentDiv(n) {
+    showDivs(slideIndex = n);
+    }
+
+    function showDivs(n) {
+    var i;
+    var x = document.getElementsByClassName("img_big_box");
+    var dots = document.getElementsByClassName("number_button");
+    if (n > x.length) {slideIndex = 1}    
+    if (n < 1) {slideIndex = x.length}
+    for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";  
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    x[slideIndex-1].style.display = "block";  
+    dots[slideIndex-1].className += " active";
+    }
+</script>
+
+
+</body>
+
+</html>
